@@ -48,6 +48,8 @@ public class DataAdder {
 		String resultPath = output; // the file path where the results are saved.
 		
 		nw = new CountMaterial(dataPath,hm1);
+		hm1= nw.giveList();
+		System.out.println("정렬했을때 : " + hm1);
 		Map<String, ResultOne> sorted = new TreeMap<String,ResultOne>(hm1);
 		ArrayList<String> linesToBeSaved = countNumber(sorted);
 		Utils.writeAFile(linesToBeSaved, resultPath);
@@ -59,9 +61,13 @@ public class DataAdder {
 	private ArrayList<String> countNumber(Map<String, ResultOne> hm) {
 		ArrayList<String> ho=new ArrayList<>();
 		
-		for( String key : hm.keySet() ){
-			ResultOne pw=hm.get(key);
-			ho.add(nw.getName()+","+pw.getTitle()+","+pw.getPic()+","+pw.getTable());
+		
+		Iterator<String> keySetIterator = hm.keySet().iterator();
+
+		while (keySetIterator.hasNext()) {
+
+			String pw=keySetIterator.next();;
+			ho.add(nw.getName()+","+hm.get(pw).getTitle()+","+hm.get(pw).getPic()+","+hm.get(pw).getTable());
 			
 			
 		}

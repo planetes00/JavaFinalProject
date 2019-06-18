@@ -15,11 +15,14 @@ public class CountMaterial{
 	public CountMaterial(String path, HashMap<String,ResultOne> hm1) {
 		studentName=path.substring(0,path.indexOf("."));
 		ZipReader zipReader = new ZipReader();
-		zipReader.readFileInZip(path,hm);
+		hm=zipReader.readFileInZip(path,hm);
 		this.hm=hm1;
 	}
 	public String getName() {
 		return this.studentName;
+	}
+	public HashMap<String,ResultOne> giveList(){
+		return this.hm;
 	}
 	
 }

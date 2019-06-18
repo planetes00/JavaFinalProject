@@ -92,7 +92,7 @@ public class ExcelReader {
 		                    if(cell==null){
 		                        continue;
 		                    }else value=cell.getStringCellValue()+"";
-		                    temp=temp+","+value;
+		                    temp=temp+"헬로"+value;
 		                }
 		                values.add(temp);
 		                temp="";

@@ -16,7 +16,6 @@ public class CountMaterial{
 		studentName=path.substring(0,path.indexOf("."));
 		ZipReader zipReader = new ZipReader();
 		hm=zipReader.readFileInZip(path,hm);
-		this.hm=hm1;
 	}
 	public String getName() {
 		return this.studentName;

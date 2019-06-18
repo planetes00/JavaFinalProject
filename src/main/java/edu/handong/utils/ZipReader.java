@@ -12,8 +12,9 @@ import java.net.*;
 
 	public class ZipReader {
 
-		public HashMap<String,ResultOne> readFileInZip(String path,HashMap<String,ResultOne> hm) {
+		public HashMap<String,ResultOne> readFileInZip(String path,HashMap<String,ResultOne> hm1) {
 			ZipFile zipFile;
+			HashMap<String,ResultOne> hm =new HashMap();
 			try {
 				zipFile = new ZipFile(path);
 				Enumeration<? extends ZipArchiveEntry> entries = zipFile.getEntries();
@@ -29,12 +30,12 @@ import java.net.*;
 			        if(i!=0) {
 				        for(String value:myReader.getData(stream)) {
 				        	ho=new Lines(value);
+				        	//System.out.println(ho.getTitle());
 				        	if(ho.checkPic()||ho.checkTable()) {
 				        		if(!ho.checkFirst()) {
 				        			tempname=ho.getTitle();
 				        			hm.put(tempname,new ResultOne(tempname));
 				        		}
-				        		System.out.println(ho.getexp());
 				        		hm.get(tempname).addLine(ho);
 				        	}
 				        }
@@ -46,6 +47,7 @@ import java.net.*;
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			System.out.println("정렬했을때 : " + hm);
 			return hm;
 		}
 	}

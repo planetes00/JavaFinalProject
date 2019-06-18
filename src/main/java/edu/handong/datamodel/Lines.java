@@ -9,11 +9,11 @@ public class Lines {
 	
 	
 	public Lines(String line){
-		String[] array = line.split(",");
-		this.title= array[0].trim();
-		this.number=array[1].trim();
-		this.exp=array[2].trim();
-		this.pageNumber=array[3].trim();
+		String[] array = line.split("헬로");
+		this.title= array[1].trim();
+		this.number=array[2].trim();
+		this.exp=array[3].trim();
+		this.pageNumber=array[4].trim();
 	}
 	
 	public boolean checkPic() {

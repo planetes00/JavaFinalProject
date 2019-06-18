@@ -7,7 +7,7 @@ import java.util.*;
 import edu.handong.utils.*;
 import edu.handong.datamodel.*;
 
-public class CountMaterial{
+public class CountMaterial extends Thread{
 	private String studentName;
 	private HashMap<String,ResultOne> hm;
 	

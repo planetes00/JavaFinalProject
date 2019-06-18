@@ -49,7 +49,6 @@ public class DataAdder {
 		
 		nw = new CountMaterial(dataPath,hm1);
 		hm1= nw.giveList();
-		System.out.println("정렬했을때 : " + hm1);
 		Map<String, ResultOne> sorted = new TreeMap<String,ResultOne>(hm1);
 		ArrayList<String> linesToBeSaved = countNumber(sorted);
 		Utils.writeAFile(linesToBeSaved, resultPath);

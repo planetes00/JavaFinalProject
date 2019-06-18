@@ -31,9 +31,6 @@ public class Lines {
 	public String getTitle() {
 		return this.title;
 	}
-	public String getexp() {
-		return this.exp;
-	}
 }
 
 

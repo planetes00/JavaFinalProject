@@ -30,9 +30,8 @@ import java.net.*;
 			        if(i!=0) {
 				        for(String value:myReader.getData(stream)) {
 				        	ho=new Lines(value);
-				        	//System.out.println(ho.getTitle());
 				        	if(ho.checkPic()||ho.checkTable()) {
-				        		if(!ho.checkFirst()) {
+				        		if(!ho.checkFirst()||ho.getTitle()!=tempname) {
 				        			tempname=ho.getTitle();
 				        			hm.put(tempname,new ResultOne(tempname));
 				        		}
@@ -47,7 +46,6 @@ import java.net.*;
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			System.out.println("정렬했을때 : " + hm);
 			return hm;
 		}
 	}
